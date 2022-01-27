@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --white: #fff;
+    --rad1: hsl(214, 47%, 23%);  /* Radial gradient color 1*/
+    --rad2: hsl(237, 49%, 15%); /* Radial gradient color 2*/
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at top, var(--rad1), var(--rad2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    width: 40%;
+    border: 1px solid var(--white);
+    border-radius: 15px;
+    margin-top: 40px;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.score {
+    background-color: var(--white);
+    width: 20%;
+    height: 100%;
+    border-radius: 10px;
+    color: var(--score-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.score p {
+    font-size: 90%;
+}
+
+.score h1 {
+    font-size: 55px;
+    color: var(--dark-text);
+    line-height: 0.9;
+}
+
+.hands {
+    width: 380px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    background-image: url('images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin-top: 10px;
+    box-shadow: inset 0 6px 0 rgb(209, 209, 209);
+}
+
+.paper {
+    border: 15px solid hsl(230, 89%, 62%);
+}
+
+.scissor {
+    border: 15px solid hsl(39, 89%, 49%);
+}
+
+.rock {
+    border: 15px solid hsl(349, 71%, 52%);
+    /* margin-top: 10%; */
+}
+
+.hands .paper {
+    margin-right: 30px;
+}
+
+.hands .scissor {
+    margin-left: 30px;
+}
+
+.hands .hand {
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+
+.hands .hand:hover {
+    cursor: pointer;
+    transform: translate3d(0px, -8px, 0px);
+    transition: 0.2s all ease;
+}
+
+.contest {
+    width: 40%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.contest > div {
+    flex: 1;
+}
+
+.contest h1 {
+    font-size: 16px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.handImageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.userHand, .computerHand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.referee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.referee h1 {
+    font-size: 36px;
+}
+
+.newGame {
+    background-color: var(--white);
+    color: var(--dark-text);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .15s all ease;
+}
+
+.newGame:hover {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(349, 71%, 52%);
+    transform: translate3d(0px, -2px, 0px);
+}
+
+.rules-button button {
+    font-size: 18px;
+    color: var(--white);
+    background-color: transparent;
+    border: 1.2px solid var(--white);
+    border-radius: 8px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px 20px;
+    transition: .15s all ease;
+    cursor: pointer;
+    display: flex;
+}
+
+
+.rules-button button:hover {
+    background-color: var(--white);
+    color: var(--score-text);
+    transform: scale(1.1);
+}
+
+.rules-modal {
+    background-color: #f0f0f0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    margin: 11rem 28rem;
+    border-radius: 15px;
+}
+
+.rules-modal h1 {
+    position: absolute;
+    top: 25px;
+    left: 16px;
+    color: var(--dark-text);
+    font-weight: 800;
+    letter-spacing: 0px;
+}
+
+.rules button {
+    position: absolute;
+    top: 38px;
+    right: 16px;
+    border: none;
+    transition: .15s all ease;
+    cursor: pointer;
+}
+
+.rules button:hover {
+    transform: scale(1.2);
+}
+
+.rules > img {
+    margin-top: 60px;
+}
+
+.attribution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    margin: 0 32rem;
+    word-spacing: 2px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .scoreboard {
+        width: 80%;
+    }
+
+    .contest {
+        width: 80%;
+    }
+
+    .rules-modal {
+        margin: 10rem 8rem;
+    }
+
+    .attribution {
+        margin: 0 12rem;
+    }
+}

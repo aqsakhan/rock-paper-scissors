@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 10px; text-align: center; }
+    .attribution a { color: #fff; text-decoration: none; }
+    .attribution a:hover { color: hsl(229, 25%, 31%); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="scoreboard">
+      <div class="title">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <div class="score">
+        <p>Score</p>
+        <h1>0</h1>
+      </div>
+    </div>
+    <div class="hands">
+      <div class="hand paper" onclick="pickUserHand('paper')">
+        <img draggable="false" src="images/icon-paper.svg" alt="paper">
+      </div>
+      <div class="hand scissor" onclick="pickUserHand('scissor')">
+        <img draggable="false" src="images/icon-scissors.svg" alt="scissor">
+      </div>
+      <div class="hand rock" onclick="pickUserHand('rock')">
+        <img draggable="false" src="images/icon-rock.svg" alt="rock">
+      </div>
+    </div>
+    <div class="contest">
+      <div class="userHand">
+        <h1>YOU PICKED</h1>
+        <div class="handImageContainer hand" id="userImageContainer">
+            <img id="userPickImage" src="images/icon-paper.svg" alt="">
+        </div>
+      </div>
+      <div class="referee">
+        <div class="decision"><h1></h1></div>
+        <div class="newGame" onclick="restartGame()">PLAY AGAIN</div>
+      </div>
+      <div class="computerHand">
+        <h1>THE HOUSE PICKED</h1>
+        <div class="handImageContainer hand" id="computerImageContainer">
+            <img id="computerPickImage" src="images/icon-scissors.svg" alt="">
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="rules-button">
+      <button id="rules-btn-open" onclick="rulesOpen()">Rules</button>
+    </div>
+    <div class="rules-modal">
+      <h1>RULES</h1>
+      <div class="rules">
+        <img src="images/image-rules.svg" alt="rules">
+        <button id="rules-btn-close" onclick="rulesClose()"><img src="images/icon-close.svg" alt=""></button>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    <div>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://twitter.com/aqsa_khan32">Aqsa Khan🌼</a>.
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
