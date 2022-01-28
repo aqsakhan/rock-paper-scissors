@@ -124,7 +124,7 @@ body {
 .contest {
     width: 40%;
     margin-top: 50px;
-    display: flex;
+    display: none;
 }
 
 .contest > div {
